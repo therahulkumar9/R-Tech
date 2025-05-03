@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test</title>
+  </head>
+  <body>
+    <h2 id="title">H2 Tag</h2>
+
+    <div
+      id="box"
+      style="height: 100px; width: 100px; background-color: black"
+    ></div>
+
+    <label for="number">Enter you number :</label>
+    <input type="number" name="number" id="number" />
+    <button onclick="checkEvenOdd()">Check Even or Odd</button>
+
+    <img
+      style="height: 200px; width: 200px; cursor: pointer"
+      id="myImage"
+      src="https://upload.wikimedia.org/wikipedia/commons/5/53/Sheba1.JPG
+    "
+      alt="image"
+    />
+    <button onclick="changeImg()">change image</button>
+
+    <p id="count">count</p>
+    <button onclick="Timer()">start timer</button>
+
+    <script>
+      document.querySelector("#title").innerText = "Welcome"
+
+      document.getElementById("box").style.backgroundColor = "blue"
+
+      let randomNumber = Math.floor(Math.random() * 10) + 1
+      // alert(randomNumber);
+
+      function checkEvenOdd() {
+        const userInput = document.getElementById("number").value
+
+        if (userInput % 2 == 0) {
+          alert("Even")
+        } else {
+          alert("Odd")
+        }
+      }
+
+      setInterval(() => {
+        // console.log("Running...");
+      }, 1000)
+
+      let language = "JavaScript"
+      let sliced = language.slice(0, 4)
+      console.log(sliced)
+
+      let user = {
+        name: "R-Tech",
+        age: 6,
+      }
+      console.log(user)
+
+      user.isLoggedIn = true
+      console.log(user)
+
+      document.getElementById("myImage").addEventListener("click", function () {
+        this.src = ""
+        this.src =
+          "https://upload.wikimedia.org/wikipedia/commons/b/b6/Felis_catus-cat_on_snow.jpg"
+      })
+
+      function changeImg() {
+        document.getElementById("myImage").src =
+          "https://upload.wikimedia.org/wikipedia/commons/1/15/Cat_August_2010-4.jpg"
+      }
+
+      let count = 5
+      function Timer() {
+        let timer = setInterval(() => {
+          console.log(count)
+          document.getElementById("count").innerText = `${count}`
+          count--
+          if (count < 0) {
+            clearInterval(timer)
+          }
+        }, 1000)
+      }
+    </script>
+  </body>
+</html>
