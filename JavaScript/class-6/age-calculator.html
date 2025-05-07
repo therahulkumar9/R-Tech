@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Age Calculator</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #121212;
+        color: #fff;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      #box {
+        background-color: #1e1e1e;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+      }
+
+      label {
+        font-size: 18px;
+        margin-bottom: 10px;
+        display: block;
+      }
+
+      input {
+        margin-top: 10px;
+        padding: 10px;
+        border: none;
+        border-radius: 6px;
+        font-size: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      button {
+        margin-top: 15px;
+        padding: 10px 20px;
+        background-color: #e4e1e1;
+        color: black;
+        border: none;
+        border-radius: 6px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #c5c5c7;
+      }
+
+      p {
+        margin-top: 20px;
+        font-size: 1.1rem;
+        color: #f6f3fa;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box">
+      <label for="dateOfBirth">Enter your date of birth</label>
+      <input id="dateOfBirth" type="date" />
+      <button onclick="findMyAge()">Check</button>
+      <p id="ageResult"></p>
+
+      <script>
+        function findMyAge() {
+          let birthDateInput = document.getElementById("dateOfBirth").value
+
+          let birthDate = new Date(birthDateInput)
+
+          let currentDate = new Date()
+
+          if (!birthDateInput || birthDate > currentDate) {
+            document.getElementById("ageResult").innerText =
+              "Please choose a valid birth date."
+            return
+          }
+
+          // Calculate difference in years, months, days
+          let years = currentDate.getFullYear() - birthDate.getFullYear()
+          let months = currentDate.getMonth() - birthDate.getMonth()
+          let days = currentDate.getDate() - birthDate.getDate()
+
+          // Adjust if days are negative
+          if (days < 0) {
+            months--
+            // Get number of days in previous month
+            let daysInLastMonth = new Date(
+              currentDate.getFullYear(),
+              currentDate.getMonth(),
+              0
+            ).getDate()
+            days += daysInLastMonth
+          }
+
+          // Adjust if months are negative
+          if (months < 0) {
+            years--
+            months += 12
+          }
+
+          // Show the result
+          document.getElementById(
+            "ageResult"
+          ).innerText = `You are ${years} years, ${months} months, and ${days} days old.`
+        }
+      </script>
+    </div>
+  </body>
+</html>

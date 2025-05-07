@@ -29,7 +29,7 @@ console.log(date.getDay());  // tuesday => 2
 
 // Get total days in February 2025
 let daysInFeb = new Date(2025, 2, 0).getDate();
-console.log(daysInFeb);
+console.log("days in feb 2025", daysInFeb);
 
 
 let myDate = new Date();
