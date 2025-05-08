@@ -11,7 +11,11 @@ console.log(arr);
 let subArr = arr.slice(0, 3)
 
 console.log(subArr);
-console.log(arr);
 
+let extraAdd = 2;
+let newSubArr = arr.splice(0, 2+extraAdd)
+console.log(newSubArr);
+
+console.log(arr);
 
 
