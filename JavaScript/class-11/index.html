@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .bg-black {
+        background-color: black;
+      }
+
+      #align-center {
+        text-align: center;
+      }
+
+      #rahul {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 id="heading">Heading tag</h2>
+
+    <div>
+      <ol id="itemBox">
+        <li id="item1">Item 1</li>
+        <li id="item2">Item 2</li>
+      </ol>
+    </div>
+
+    <div id="myDiv">
+      <h5 id="h5">Hey Suman</h5>
+      <h5 id="h5-tag" style="display: none">JavaScript is a cool language</h5>
+    </div>
+
+    <div id="newDiv">
+      <p>First paragraph</p>
+      <p>Second paragraph</p>
+      <p>Third paragraph</p>
+    </div>
+
+    <button id="btn">Click Me!</button>
+    <script>
+      const heading = document.createElement("h1")
+      // console.log(heading);
+
+      heading.innerText = "Hello"
+      heading.textContent += " World!"
+
+      console.log(heading)
+
+      document.body.appendChild(heading)
+
+      heading.style.color = "magenta"
+
+      // heading.setAttribute('class', 'bg-black');
+      heading.classList.add("bg-black")
+      // heading.classList.remove('bg-black')
+      heading.classList.toggle("bg-black")
+
+      // heading.setAttribute('id', 'align-center')
+
+      heading.setAttribute("id", "rahul")
+
+      console.log(heading.getAttribute("id"))
+      console.log(heading.getAttribute("class"))
+      console.log(heading.getAttribute("style"))
+
+      heading.removeAttribute("id")
+
+      // heading.remove()
+
+      const myHeading = document.getElementById("heading")
+      myHeading.remove()
+
+      const itemBox = document.getElementById("itemBox")
+
+      const item1 = document.getElementById("item1")
+
+      itemBox.removeChild(item1)
+
+      const h5 = document.getElementById("h5")
+      const h5Tag = document.getElementById("h5-tag")
+
+      //   console.log(h5.innerText)
+      //   console.log(h5Tag.textContent)
+
+      console.log("Example")
+
+      const myDiv = document.getElementById("myDiv")
+      console.log(myDiv.innerText)
+      console.log(myDiv.textContent)
+
+      myDiv.innerHTML += `<span> Hi Sir </span>`
+
+      const newDiv = document.getElementById("newDiv")
+
+      console.log(newDiv)
+
+      const firstPara = newDiv.firstElementChild
+
+      // firstPara.remove()
+
+      const secondPara = firstPara.nextElementSibling
+      secondPara.remove()
+
+      const thirdPara = newDiv.lastElementChild
+      thirdPara.remove()
+
+      // newDiv.removeChild(firstPara)
+
+      const btn = document.getElementById("btn")
+
+      function myFunction() {
+        alert("Button Clicked")
+      }
+
+      btn.addEventListener("click", myFunction, { once: true })
+
+      setTimeout(() => {
+        btn.removeEventListener("click", myFunction)
+        console.log("Event Removed")
+        btn.remove()
+      }, 3000)
+    </script>
+  </body>
+</html>
