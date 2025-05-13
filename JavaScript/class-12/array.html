@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+  </head>
+  <body>
+    <h1>Events</h1>
+    <ul id="eventList"></ul>
+
+    <script>
+      const events = [
+        "Tech Conference 2025",
+        "AI & Machine Learning Meetup",
+        "JavaScript Bootcamp",
+        "Startup Pitch Night",
+        "Cybersecurity Workshop",
+        "Hacking Workshop",
+      ]
+
+      const eventList = document.getElementById("eventList")
+
+      const element1 = document.createElement("li")
+      element1.innerText = events[0]
+
+      // eventList.appendChild(element1);
+
+      events.forEach((event) => {
+        // console.log(event)
+        // console.log(typeof event)
+
+        const element = document.createElement("li")
+        element.innerText = event
+        console.log(element)
+
+        eventList.appendChild(element)
+      })
+    </script>
+  </body>
+</html>
