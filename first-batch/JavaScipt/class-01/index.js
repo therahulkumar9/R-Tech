@@ -33,31 +33,32 @@ console.log(bool);
 
 
 /*
-String - "", '', ``
-Number - 2, 3.5 , 1290200, Infinity
-BigInt - 2^53 - 1
-Undefined
-Null
-Symbol
-Boolean - true, false
-Object
+JavaScript Primitive Types:
+- String - "", '', ``
+- Number - 2, 3.5 , 1290200, Infinity
+- BigInt - 2^53 - 1
+- Undefined
+- Null
+- Symbol
+- Boolean - true, false
+- Object
 */
 
 
 
 
-console.log(Symbol("name"));
-console.log(Symbol("name"));
+console.log(Symbol("name"));  // Unique Symbol
+console.log(Symbol("name")); // Different from the one above
 
 
-// Object 
-
+// Object example
 let user = {
     name: "Rahul",
     age: 20,
     address: "Nalanda"
 }
 
+// Array example
 let nums = [3, 4, 6, 9, 10]
 
 
@@ -67,7 +68,7 @@ console.log(typeof num);
 console.log(typeof(num));
 
 console.log(typeof user);
-console.log(typeof nums);
+console.log(typeof nums); // object (arrays are technically objects)
 
 
 // Varible
