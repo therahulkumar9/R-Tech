@@ -1,0 +1,6 @@
+mkdir - to make directory
+touch - make files 
+
+command : 
+mkdir class-01
+touch notes.txt
