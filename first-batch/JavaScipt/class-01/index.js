@@ -64,6 +64,7 @@ let nums = [3, 4, 6, 9, 10]
 
 console.log(typeof name);
 console.log(typeof(name));
+
 console.log(typeof num);
 console.log(typeof(num));
 
@@ -110,6 +111,13 @@ console.log("Rohit");
 console.log("Ronak");
 console.groupEnd()
 
+console.log("After group");
 
 
+let bigNumber = 948787089744007199254740992988777n;
+console.log(typeof bigNumber);
 
+
+console.log(user);
+
+console.table(user)
