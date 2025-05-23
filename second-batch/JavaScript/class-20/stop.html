@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Synchronous vs Asynchronous</title>
+  </head>
+  <body>
+    <h1>R-Tech</h1>
+    <button id="stop">Stop</button>
+
+    <script>
+      setTimeout(function () {
+        console.log("Rahul")
+      }, 2000)
+
+      const changeText = function () {
+        document.querySelector("h1").innerHTML = "JS"
+      }
+
+      const myTimeout = setTimeout(changeText, 2000)
+
+      document.getElementById("stop").addEventListener("click", function () {
+        clearTimeout(myTimeout)
+        console.log("Stopped")
+      })
+    </script>
+  </body>
+</html>
