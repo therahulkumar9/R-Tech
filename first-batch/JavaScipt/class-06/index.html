@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn" onclick="changeText()">Start</button>
+    <button id="btn-2" onclick="changeCount()">One</button>
+
+    <script>
+      const btn = document.getElementById("btn")
+      console.log(btn)
+
+      // btn.innerText = "Stop"
+      // btn.innerText = 'Start'
+
+      function changeText() {
+        if (btn.innerText == "Start") {
+          btn.innerText = "Stop"
+        } else {
+          btn.innerText = "Start"
+        }
+      }
+
+      const btn2 = document.getElementById("btn-2")
+
+      function changeCount() {
+        if (btn2.innerText == "One") {
+          btn2.innerText = "Two"
+        } else if (btn2.innerText == "Two") {
+          btn2.innerText = "Three"
+        } else {
+          btn2.innerText = "One"
+        }
+      }
+    </script>
+  </body>
+</html>
