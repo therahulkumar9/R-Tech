@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 120px;
+            height: 120px;
+        }
+    </style>
+</head>
+<body>
+    <button id="toggle" onclick="toggleButton()">Dark</button>
+    <!-- <img src="https://media.istockphoto.com/id/1925414052/photo/happy-panting-golden-retriever-dog-and-blue-maine-coon-cat-looking-at-camera-isolated-on-grey.jpg?s=1024x1024&w=is&k=20&c=oi4vl8EnVDp77hQSNNZtJxJLrDWgREZZ-Xl4sASsiFo=" alt=""> -->
+    <img id="myImg" src="https://c.pxhere.com/photos/88/8a/cat_lying_blue_eye_small_ginger_fur_heal_pet_animal-609263.jpg!d" alt="">
+
+
+    <script>
+
+        function toggleButton(){
+            if(document.getElementById('toggle').innerText == "Light"){
+                document.getElementById('toggle').innerText = "Dark";
+                document.body.style.backgroundColor = "white";
+                document.getElementById('myImg').src = "https://c.pxhere.com/photos/88/8a/cat_lying_blue_eye_small_ginger_fur_heal_pet_animal-609263.jpg!d"
+
+            } else {
+                document.getElementById('toggle').innerText = "Light";
+                document.body.style.backgroundColor = "black";
+                document.getElementById('myImg').src = "https://media.istockphoto.com/id/1925414052/photo/happy-panting-golden-retriever-dog-and-blue-maine-coon-cat-looking-at-camera-isolated-on-grey.jpg?s=1024x1024&w=is&k=20&c=oi4vl8EnVDp77hQSNNZtJxJLrDWgREZZ-Xl4sASsiFo="
+
+            }
+        }
+    </script>
+</body>
+</html>

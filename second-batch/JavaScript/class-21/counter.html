@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter Project</title>
+  </head>
+  <body>
+    <!-- <h1>R-Tech</h1> -->
+    <h1 id="count">0 Sec</h1>
+    <button id="start" onclick="start()">Start</button>
+    <button id="stop" onclick="stop()">Stop</button>
+    <button id="reset" onclick="reset()">Reset</button>
+
+    <script>
+      const count = document.getElementById("count")
+      let myInterval
+      let counter = 0
+      //   let once = true
+
+      function start() {
+        myInterval = setInterval(() => {
+          counter++
+          count.innerText = counter + " Sec"
+          //   if (once) {
+          //     if (counter >= 10) {
+          //       clearInterval(myInterval)
+          //       once = false
+          //     }
+          //   }
+        }, 1000)
+      }
+
+      function stop() {
+        clearInterval(myInterval)
+      }
+
+      function reset() {
+        count.innerText = "0" + " Sec"
+        counter = 0
+        clearInterval(myInterval)
+      }
+    </script>
+  </body>
+</html>
